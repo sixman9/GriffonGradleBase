@@ -1,0 +1,7 @@
+apply plugin: 'templates'
+
+// if you want to use the gradle wrapper
+task('wrapper', type: Wrapper).configure {
+    gradleVersion = '1.0-milestone-5'
+}
+

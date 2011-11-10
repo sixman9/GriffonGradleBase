@@ -1,0 +1,32 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        mavenRepo name: 'Codehaus', url: 'http://repository.codehaus.org/'
+        mavenRepo name: 'Grails Central', url: 'http://repo.grails.org/grails/core/'
+        mavenRepo name: 'SpringSource-release', url: 'http://repository.springsource.com/maven/bundles/release'
+        mavenRepo name: 'JavaNet', url: 'http://download.java.net/maven/2/'
+    }
+
+    dependencies {
+        classpath("org.codehaus.griffon:griffon-gradle-plugin:1.0.0")
+        classpath("org.codehaus.griffon:griffon-scripts:0.9.4") {
+            exclude group: 'org.aopalliance', name: 'com.springsource.org.aopalliance'
+        }
+    }
+}
+
+griffonVersion = '0.9.4'
+version = 0.1
+
+apply plugin: "griffon"
+
+repositories {
+	mavenCentral()
+	mavenRepo name: 'Codehaus', url: 'http://repository.codehaus.org/'
+        mavenRepo name: 'SpringSource-release', url: 'http://repository.springsource.com/maven/bundles/release'
+        mavenRepo name: 'SpringSource-external', url: 'http://repository.springsource.com/maven/bundles/external'
+}
+
+dependencies {
+    compile "org.codehaus.griffon:griffon-rt:$griffonVersion"
+}
